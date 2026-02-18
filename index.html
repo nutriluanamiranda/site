@@ -116,6 +116,59 @@
       gap: 0.9rem;
     }
 
+    .hero-avatar-shell {
+      position: relative;
+      width: clamp(124px, 18vw, 176px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      padding: 5px;
+      background: conic-gradient(
+        from 145deg,
+        rgba(239, 204, 147, 0.95),
+        rgba(165, 201, 255, 0.55),
+        rgba(247, 220, 177, 0.92),
+        rgba(92, 142, 214, 0.62),
+        rgba(239, 204, 147, 0.95)
+      );
+      box-shadow:
+        0 0 0 1px rgba(241, 217, 185, 0.42),
+        0 18px 34px rgba(2, 9, 24, 0.55);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero-avatar-shell::before,
+    .hero-avatar-shell::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-avatar-shell::before {
+      inset: 8px;
+      border: 2px solid rgba(246, 225, 195, 0.72);
+      box-shadow: inset 0 0 0 1px rgba(248, 239, 224, 0.35);
+      z-index: 1;
+    }
+
+    .hero-avatar-shell::after {
+      inset: 16px;
+      border: 1px solid rgba(241, 219, 184, 0.4);
+      z-index: 1;
+    }
+
+    .hero-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 20%;
+      filter: saturate(0.96);
+      position: relative;
+      z-index: 0;
+    }
+
     .eyebrow {
       margin: 0;
       letter-spacing: 0.36em;
@@ -252,6 +305,27 @@
       border: 1px solid rgba(211, 227, 252, 0.22);
     }
 
+    .card-stamp {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.38rem;
+      min-height: 32px;
+      padding: 0.24rem 0.64rem;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      border: 1px solid transparent;
+    }
+
+    .card-stamp svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
     .card-copy h2 {
       margin: 0;
       font-size: clamp(1.2rem, 2.2vw, 1.62rem);
@@ -265,6 +339,106 @@
       color: var(--ink-300);
       max-width: 44ch;
       font-size: 0.95rem;
+    }
+
+    .link-card--coupon {
+      border-color: rgba(238, 205, 154, 0.52);
+      background:
+        linear-gradient(100deg, rgba(74, 48, 16, 0.82) 0%, rgba(18, 41, 78, 0.92) 48%, rgba(12, 30, 58, 0.86) 100%);
+    }
+
+    .link-card--coupon .card-chip {
+      color: #34250f;
+      background: rgba(247, 225, 189, 0.95);
+      border-color: rgba(251, 234, 208, 0.72);
+    }
+
+    .link-card--coupon .card-stamp {
+      color: #3a2b13;
+      background: linear-gradient(180deg, rgba(250, 235, 209, 0.98), rgba(232, 194, 133, 0.94));
+      border-color: rgba(251, 235, 210, 0.8);
+    }
+
+    .link-card--coupon .card-visual {
+      background:
+        radial-gradient(100% 100% at 0% 100%, rgba(234, 186, 112, 0.52) 0%, rgba(234, 186, 112, 0) 68%),
+        radial-gradient(100% 100% at 100% 0%, rgba(128, 177, 245, 0.32) 0%, rgba(128, 177, 245, 0) 70%),
+        linear-gradient(120deg, rgba(58, 37, 13, 0.65), rgba(15, 36, 67, 0.92));
+    }
+
+    .link-card--coupon-alt {
+      border-color: rgba(129, 176, 245, 0.54);
+      background:
+        linear-gradient(100deg, rgba(13, 38, 74, 0.94) 0%, rgba(22, 46, 82, 0.92) 46%, rgba(92, 66, 24, 0.76) 100%);
+    }
+
+    .link-card--coupon-alt .card-chip {
+      color: #dae9ff;
+      background: rgba(96, 145, 218, 0.3);
+      border-color: rgba(174, 205, 248, 0.58);
+    }
+
+    .link-card--coupon-alt .card-stamp {
+      color: #f2f6ff;
+      background: linear-gradient(180deg, rgba(72, 119, 189, 0.95), rgba(42, 85, 148, 0.95));
+      border-color: rgba(182, 212, 255, 0.55);
+    }
+
+    .link-card--coupon-alt .card-visual {
+      background:
+        radial-gradient(100% 100% at 100% 0%, rgba(140, 186, 251, 0.4) 0%, rgba(140, 186, 251, 0) 70%),
+        radial-gradient(100% 100% at 0% 100%, rgba(242, 197, 132, 0.44) 0%, rgba(242, 197, 132, 0) 68%),
+        linear-gradient(120deg, rgba(12, 39, 78, 0.82), rgba(52, 39, 15, 0.75));
+    }
+
+    .link-card--press {
+      border-color: rgba(137, 184, 251, 0.58);
+      background:
+        linear-gradient(100deg, rgba(9, 33, 67, 0.96) 0%, rgba(12, 44, 83, 0.9) 50%, rgba(16, 42, 74, 0.84) 100%);
+    }
+
+    .link-card--press .card-chip {
+      color: #dfecff;
+      background: rgba(84, 133, 204, 0.3);
+      border-color: rgba(177, 208, 251, 0.55);
+    }
+
+    .link-card--press .card-stamp {
+      color: #f1f6ff;
+      background: linear-gradient(180deg, rgba(77, 123, 190, 0.95), rgba(36, 83, 149, 0.95));
+      border-color: rgba(172, 204, 246, 0.55);
+    }
+
+    .link-card--press .card-visual {
+      background:
+        linear-gradient(180deg, rgba(252, 252, 252, 0.06), rgba(252, 252, 252, 0) 36%),
+        radial-gradient(110% 100% at 100% 0%, rgba(236, 191, 120, 0.26) 0%, rgba(236, 191, 120, 0) 65%),
+        linear-gradient(120deg, rgba(12, 38, 75, 0.9), rgba(8, 25, 52, 0.95));
+    }
+
+    .link-card--press-alt {
+      border-color: rgba(234, 198, 145, 0.56);
+      background:
+        linear-gradient(100deg, rgba(70, 49, 21, 0.84) 0%, rgba(17, 42, 77, 0.94) 48%, rgba(13, 36, 66, 0.9) 100%);
+    }
+
+    .link-card--press-alt .card-chip {
+      color: #3a2a12;
+      background: rgba(245, 224, 193, 0.92);
+      border-color: rgba(248, 235, 215, 0.74);
+    }
+
+    .link-card--press-alt .card-stamp {
+      color: #402e14;
+      background: linear-gradient(180deg, rgba(252, 236, 209, 0.98), rgba(232, 193, 131, 0.94));
+      border-color: rgba(250, 233, 206, 0.78);
+    }
+
+    .link-card--press-alt .card-visual {
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0) 38%),
+        radial-gradient(110% 100% at 100% 0%, rgba(236, 191, 120, 0.42) 0%, rgba(236, 191, 120, 0) 67%),
+        linear-gradient(120deg, rgba(61, 42, 16, 0.8), rgba(9, 31, 61, 0.9));
     }
 
     .card-visual {
@@ -580,6 +754,9 @@
       <div class="hero__noise"></div>
       <div class="hero__grid">
         <div class="hero__content">
+          <div class="hero-avatar-shell">
+            <img class="hero-avatar" src="https://ugc.production.linktr.ee/9026a8ca-13b4-4822-a9fc-8b7ee76381db_IMG-2918.jpeg" alt="Retrato da Dra. Luana Miranda">
+          </div>
           <p class="eyebrow">NUTRIÇÃO CLÍNICA E ESPORTIVA</p>
           <h1>Dra. Luana Miranda</h1>
           <p class="hero__subtitle">Nutrição personalizada com foco em resultado real, rotina prática e acompanhamento próximo.</p>
@@ -625,9 +802,13 @@
             </div>
           </a>
 
-          <a class="link-card reveal" href="https://www.vitafor.com.br/" target="_blank" rel="noopener noreferrer">
+          <a class="link-card link-card--coupon reveal" href="https://www.vitafor.com.br/" target="_blank" rel="noopener noreferrer">
             <div class="card-copy">
               <span class="card-chip">Parceiro</span>
+              <span class="card-stamp" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m21.7 11.3-9-9a1 1 0 0 0-.7-.3H5a3 3 0 0 0-3 3v7c0 .3.1.5.3.7l9 9a1 1 0 0 0 1.4 0l9-9a1 1 0 0 0 0-1.4ZM7.5 8A1.5 1.5 0 1 1 7.5 5a1.5 1.5 0 0 1 0 3Z"/></svg>
+                Desconto
+              </span>
               <h2>Cupom na Vitafor</h2>
               <p>Use o código LD514037VITAFOR para comprar com desconto.</p>
             </div>
@@ -638,9 +819,13 @@
             </div>
           </a>
 
-          <a class="link-card reveal" href="https://www.duxhumanhealth.com/" target="_blank" rel="noopener noreferrer">
+          <a class="link-card link-card--coupon-alt reveal" href="https://www.duxhumanhealth.com/" target="_blank" rel="noopener noreferrer">
             <div class="card-copy">
               <span class="card-chip">Parceiro</span>
+              <span class="card-stamp" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m21.7 11.3-9-9a1 1 0 0 0-.7-.3H5a3 3 0 0 0-3 3v7c0 .3.1.5.3.7l9 9a1 1 0 0 0 1.4 0l9-9a1 1 0 0 0 0-1.4ZM7.5 8A1.5 1.5 0 1 1 7.5 5a1.5 1.5 0 0 1 0 3Z"/></svg>
+                Cupom 20%
+              </span>
               <h2>Cupom na DUX</h2>
               <p>Use o código PACLUANAMIRANDA e receba 20% de desconto.</p>
             </div>
@@ -651,9 +836,13 @@
             </div>
           </a>
 
-          <a class="link-card reveal" href="https://www.instagram.com/biomundosalvador/" target="_blank" rel="noopener noreferrer">
+          <a class="link-card link-card--coupon reveal" href="https://www.instagram.com/biomundosalvador/" target="_blank" rel="noopener noreferrer">
             <div class="card-copy">
               <span class="card-chip">Benefício</span>
+              <span class="card-stamp" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="m21.7 11.3-9-9a1 1 0 0 0-.7-.3H5a3 3 0 0 0-3 3v7c0 .3.1.5.3.7l9 9a1 1 0 0 0 1.4 0l9-9a1 1 0 0 0 0-1.4ZM7.5 8A1.5 1.5 0 1 1 7.5 5a1.5 1.5 0 0 1 0 3Z"/></svg>
+                CRN Válido
+              </span>
               <h2>Desconto na Bio Mundo</h2>
               <p>Consulte lojas parceiras e apresente o CRN 5 14037 para desconto.</p>
             </div>
@@ -664,9 +853,13 @@
             </div>
           </a>
 
-          <a class="link-card reveal" href="https://atarde.com.br/economia/coco-e-uva-sao-frutas-em-alta-de-producao-durante-o-verao-1253897" target="_blank" rel="noopener noreferrer">
+          <a class="link-card link-card--press reveal" href="https://atarde.com.br/economia/coco-e-uva-sao-frutas-em-alta-de-producao-durante-o-verao-1253897" target="_blank" rel="noopener noreferrer">
             <div class="card-copy">
               <span class="card-chip">Imprensa</span>
+              <span class="card-stamp" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 3h12a2 2 0 0 1 2 2v1h2a2 2 0 0 1 2 2v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V3Zm2 2v13a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H6Zm3 3h6v2H9V8Zm0 4h6v2H9v-2Zm0 4h4v2H9v-2Z"/></svg>
+                Na imprensa
+              </span>
               <h2>Matéria sobre frutas ideais para o verão</h2>
               <p>Leia a participação em matéria no jornal A Tarde.</p>
             </div>
@@ -677,9 +870,13 @@
             </div>
           </a>
 
-          <a class="link-card reveal" href="https://atarde.com.br/atardeagro/aporte-de-mais-de-r-35-bi-na-agricultura-familiar-incentiva-producao-1247941" target="_blank" rel="noopener noreferrer">
+          <a class="link-card link-card--press-alt reveal" href="https://atarde.com.br/atardeagro/aporte-de-mais-de-r-35-bi-na-agricultura-familiar-incentiva-producao-1247941" target="_blank" rel="noopener noreferrer">
             <div class="card-copy">
               <span class="card-chip">Imprensa</span>
+              <span class="card-stamp" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 3h12a2 2 0 0 1 2 2v1h2a2 2 0 0 1 2 2v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V3Zm2 2v13a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H6Zm3 3h6v2H9V8Zm0 4h6v2H9v-2Zm0 4h4v2H9v-2Z"/></svg>
+                Jornal
+              </span>
               <h2>Matéria sobre produção orgânica na Bahia</h2>
               <p>Acesse o conteúdo publicado no portal A Tarde.</p>
             </div>
